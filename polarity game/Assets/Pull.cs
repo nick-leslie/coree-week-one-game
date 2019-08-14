@@ -13,6 +13,7 @@ public class Pull : MonoBehaviour
     public Material hilight;
     public Material defalt;
     public GameObject Tsulection;
+    public GameObject childNewPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class Pull : MonoBehaviour
           Tsulection.transform.position=Vector3.MoveTowards(Tsulection.transform.position,transform.position,pullspeed * Time.deltaTime);
           if (Vector3.Distance(Tsulection.transform.position,transform.position) < DisTillChild) {
 Tsulection.transform.parent=transform;
+Tsulection.transform.position=childNewPos.transform.position;
           }
           }
     }
