@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 00000000000000000000000000000000
+  productGUID: dc65564ca93854f9f8cbecccde609ba8
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -698,7 +698,7 @@ PlayerSettings:
   apiCompatibilityLevel: 2
   cloudProjectId: cebfe726-be06-44a3-b1c6-a49176bdf1d5
   framebufferDepthMemorylessMode: 0
-  projectName: EffectsExamples
+  projectName: polarity game
   organizationId: nleslie
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

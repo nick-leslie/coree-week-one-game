@@ -12,7 +12,6 @@ public class PlayerControler : MonoBehaviour
     private float mosueposY;
     public float sensitivity;
     //-------------------
-    public CharacterController cc;
     public float movespeed;
     public float moveFB;
     public float moveLR;
@@ -41,11 +40,9 @@ public class PlayerControler : MonoBehaviour
     //---------------------------------------------------
     // movement stuff
      private void movement() {
-     moveFB=Input.GetAxisRaw("Vertical") * movespeed;
-     moveLR=Input.GetAxisRaw("Horizontal") * movespeed;
-     Vector3 fmoveUD = moveFB * Vector3.forward;
-     Vector3 fmoveLR= moveLR * Vector2.right;
-     cc.SimpleMove(fmoveUD + fmoveLR);
+     moveFB=Input.GetAxisRaw("Vertical") * movespeed * Time.deltaTime;
+     moveLR=Input.GetAxisRaw("Horizontal") * movespeed * Time.deltaTime;
+     transform.Translate(moveLR,0,moveFB);
      }
     //--------------------------------------------------
     //camra stuff

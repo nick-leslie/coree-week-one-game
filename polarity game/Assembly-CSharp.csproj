@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
      <Compile Include="Assets\PlayerControler.cs" />
+     <Compile Include="Assets\Pull.cs" />
      <Compile Include="Assets\Shared\Ramps\Runtime\RampAsset.cs" />
      <Compile Include="Assets\Shared\Scripts\AdjustTimeScale.cs" />
      <Compile Include="Assets\Shared\Scripts\ProximityActivate.cs" />
