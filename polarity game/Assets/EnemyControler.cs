@@ -27,6 +27,9 @@ public float AImaxWaitTime;
 //---------------------
 // enemy health and dying
 public int health;
+public float stunTime;
+public float stunthresh;
+public float hurtThresh;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,11 @@ public int health;
     // Update is called once per frame
     void Update()
     {
+        if(stunTime>0) {
+            agent.isStopped=true;
+            stunTime-=Time.deltaTime;
+        }
+        if(stunTime<=0) {
         DetectionManinger();
         if(playerSeen==true) {
             agent.isStopped=true;
@@ -46,7 +54,11 @@ public int health;
         } else {
             agent.isStopped=false;
         }
-           patroling();
+    }
+    if(health<= 0) {
+        die();
+    }
+         patroling();
     }
 
 private void DetectionManinger() {
@@ -95,7 +107,21 @@ if (AIwaitTime>=AImaxWaitTime) {
 }
 }
 }
-public void Damage(int damage) {
-    
+ private void OnCollisionEnter(Collision other) {
+    if(other.collider.CompareTag("interactable")) {
+        Damage(other.gameObject.GetComponent<interactableStats>().velocity,other.gameObject.GetComponent<interactableStats>().Damage,other.gameObject.GetComponent<interactableStats>().stunTime);
+        AIwaitTime=0;
+    }
+}
+public void Damage(float velocity,int damage,float forenstunTime) {
+    if(velocity>hurtThresh) {
+        health-=damage;
+    } 
+     if(velocity> stunthresh) {
+        stunTime=forenstunTime;
+    }
+}
+public void die() {
+    Destroy(gameObject);
 }
 }
