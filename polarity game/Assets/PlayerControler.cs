@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerControler : MonoBehaviour
 {
     //------------------
@@ -15,6 +14,10 @@ public class PlayerControler : MonoBehaviour
     public float movespeed;
     public float moveFB;
     public float moveLR;
+    public float jumpHight;
+    public Rigidbody rb;
+    public bool canJump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,9 @@ public class PlayerControler : MonoBehaviour
         playercam=Camera.main;
         Cursor.lockState=CursorLockMode.Locked;
         Xclamp=0.0f;
-        
+        //---------------
+        //movement
+        rb=gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -31,9 +36,11 @@ public class PlayerControler : MonoBehaviour
     {
        camraRotation();
        movement();
-    }
-     private void FixedUpdate() {
-        
+       if(Input.GetKeyDown(KeyCode.Space)) {
+           if(canJump) {
+           Jump();
+           }
+       }
     }
     //---------------------------------------------------
     // movement stuff
@@ -42,6 +49,13 @@ public class PlayerControler : MonoBehaviour
      moveLR=Input.GetAxisRaw("Horizontal") * movespeed * Time.deltaTime;
      transform.Translate(moveLR,0,moveFB);
      }
+     private void Jump() {
+         canJump=false;
+         rb.velocity= new Vector3(0,jumpHight,0);
+     }
+      private void OnCollisionEnter(Collision other) {
+        canJump=true;
+    }
     //--------------------------------------------------
     //camra stuff
     private void camraRotation() {

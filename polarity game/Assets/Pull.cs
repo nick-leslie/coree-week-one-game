@@ -26,14 +26,16 @@ public class Pull : MonoBehaviour
       raycastingHighlight();
       if(Input.GetMouseButton(0)) {
          pulling();
+          
       }
     }
 
     public void pulling() {
          if(Tsulection != null) {
+             Tsulection.GetComponent<Rigidbody>().velocity=Vector3.zero;
           Tsulection.transform.position=Vector3.MoveTowards(Tsulection.transform.position,transform.position,pullspeed * Time.deltaTime);
           if (Vector3.Distance(Tsulection.transform.position,transform.position) < DisTillChild) {
-Tsulection.transform.parent=transform;
+Tsulection.transform.parent=childNewPos.transform;
 Tsulection.transform.position=childNewPos.transform.position;
           }
           }

@@ -53,7 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\disable.cs" />
      <Compile Include="Assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
+     <Compile Include="Assets\EnemyControler.cs" />
+     <Compile Include="Assets\kolby.cs" />
      <Compile Include="Assets\PlayerControler.cs" />
      <Compile Include="Assets\Pull.cs" />
      <Compile Include="Assets\Push.cs" />
