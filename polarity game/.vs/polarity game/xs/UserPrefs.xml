@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{24A2E159-B7E9-594E-B7D7-B557C17E76EA}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/EnemyControler.cs">
+    <Files>
+      <File FileName="Assets/PlayerControler.cs" Line="44" Column="6" />
+      <File FileName="Assets/Pull.cs" Line="34" Column="34" />
+      <File FileName="Assets/Push.cs" Line="1" Column="1" />
+      <File FileName="Assets/EnemyControler.cs" Line="28" Column="41" />
+      <File FileName="Assets/interactableStats.cs" Line="21" Column="73" />
+      <File FileName="Assets/SoundAi.cs" Line="39" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

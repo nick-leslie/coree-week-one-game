@@ -24,6 +24,7 @@ public Transform[] wayPoints;
 int m_curentwaypointIndex;
 public float AIwaitTime;
 public float AImaxWaitTime;
+    public GameObject soundmanier;
 //---------------------
 // enemy health and dying
 public int health;
@@ -54,11 +55,21 @@ public float hurtThresh;
         } else {
             agent.isStopped=false;
         }
-    }
+            if (soundmanier.GetComponent<SoundAi>().B_Investagate == true)
+            {
+                investigate(soundmanier.GetComponent<SoundAi>().suspisiospos);
+            }
+        }
     if(health<= 0) {
         die();
     }
-         patroling();
+        if (health > 0)
+        {
+            if (soundmanier.GetComponent<SoundAi>().B_Investagate == false)
+            {
+                patroling();
+            }
+        }
     }
 
 private void DetectionManinger() {
@@ -81,22 +92,23 @@ private void DetectionManinger() {
           }
       }
     }
- private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other) {
     if(other.CompareTag("Player")) {
         inZone.enabled=true;
         PlayerInSight=true;
     }
-}
- private void OnTriggerExit(Collider other) {
-     if(other.CompareTag("Player")) {
-        PlayerInSight=false;
-        playerSeen=false;
-        inZone.enabled=false;
-        alerted.fillAmount=0;
-        waitTime=0;
     }
-}
-public void patroling() {
+ private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Player"))
+        {
+            PlayerInSight = false;
+            playerSeen = false;
+            inZone.enabled = false;
+            alerted.fillAmount = 0;
+            waitTime = 0;
+        }
+    }
+    public void patroling() {
 if(agent.remainingDistance <= agent.stoppingDistance) {
 if (AIwaitTime>=AImaxWaitTime) {
     m_curentwaypointIndex= (m_curentwaypointIndex + 1) % wayPoints.Length;
@@ -107,7 +119,16 @@ if (AIwaitTime>=AImaxWaitTime) {
 }
 }
 }
- private void OnCollisionEnter(Collision other) {
+    private void investigate(Vector3 suspos)
+    {
+        agent.SetDestination(suspos);
+        if(agent.remainingDistance<= agent.stoppingDistance)
+        {
+            agent.SetDestination(wayPoints[m_curentwaypointIndex].position);
+            soundmanier.GetComponent<SoundAi>().B_Investagate = false;
+        }
+    }
+    private void OnCollisionEnter(Collision other) {
     if(other.collider.CompareTag("interactable")) {
         Damage(other.gameObject.GetComponent<interactableStats>().velocity,other.gameObject.GetComponent<interactableStats>().Damage,other.gameObject.GetComponent<interactableStats>().stunTime);
         AIwaitTime=0;
