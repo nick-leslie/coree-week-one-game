@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundAi : MonoBehaviour
 {
-    private float TimeTillInvestagate;
+    public  float TimeTillInvestagate;
     public float maxTimeTillInvestagate;
     public bool B_Investagate;
     public Vector3 suspisiospos;
@@ -27,7 +27,7 @@ public class SoundAi : MonoBehaviour
             {
                 if (TimeTillInvestagate >= maxTimeTillInvestagate)
                 {
-                    B_Investagate = false;
+                    B_Investagate = true;
                     suspisiospos = other.transform.position;
                     TimeTillInvestagate = 0;
                 }

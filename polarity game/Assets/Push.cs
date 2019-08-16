@@ -14,17 +14,26 @@ public class Push : MonoBehaviour
     //UI stuff
     public Image forceBarBack;
     public Image forcebar;
+    //---------------------
+    //descaling pervention
+    public Vector3 scale;
+    public Vector3 dif;
     // Start is called before the first frame update
     void Start()
     {
         PushForce=bacePushForce;
         camera=Camera.main;
         UIHandler(false,0);
+        scale=transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+      //  if(transform.localScale != scale) { 
+        //    dif= transform.localScale-scale;
+          //  transform.localScale+=dif;
+        //}
        pusing();
     }
     private void pusing() {

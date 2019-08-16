@@ -124,6 +124,7 @@ if (AIwaitTime>=AImaxWaitTime) {
         agent.SetDestination(suspos);
         if(agent.remainingDistance<= agent.stoppingDistance)
         {
+            soundmanier.GetComponent<SoundAi>().suspisiospos=Vector3.zero;
             agent.SetDestination(wayPoints[m_curentwaypointIndex].position);
             soundmanier.GetComponent<SoundAi>().B_Investagate = false;
         }

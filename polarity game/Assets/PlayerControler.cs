@@ -11,13 +11,16 @@ public class PlayerControler : MonoBehaviour
     private float mosueposY;
     public float sensitivity;
     //-------------------
+    //move stuff
     public float movespeed;
     public float moveFB;
     public float moveLR;
     public float jumpHight;
     public Rigidbody rb;
     public bool canJump;
-
+    public Vector3 crouchscale;
+    public Vector3 normalscale;
+    public bool crouchState;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,7 @@ public class PlayerControler : MonoBehaviour
         //---------------
         //movement
         rb=gameObject.GetComponent<Rigidbody>();
+        normalscale=transform.localScale;
     }
 
     // Update is called once per frame
@@ -41,6 +45,16 @@ public class PlayerControler : MonoBehaviour
            Jump();
            }
        }
+       if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) {
+           if(crouchState==false) {
+               crouch(true);
+               crouchState=true;
+           } else {
+               crouch(false);
+               crouchState=false;
+           }
+          } 
+       
     }
     //---------------------------------------------------
     // movement stuff
@@ -55,6 +69,19 @@ public class PlayerControler : MonoBehaviour
      }
       private void OnCollisionEnter(Collision other) {
         canJump=true;
+    }
+    private void crouch(bool state) {
+        if(state==true) {
+        transform.localScale-=crouchscale;
+        }  
+        if(state==false) {
+            if(transform.localScale==normalscale) {
+                return;
+            } else {
+                transform.localScale+=crouchscale;
+            }
+
+        }
     }
     //--------------------------------------------------
     //camra stuff
