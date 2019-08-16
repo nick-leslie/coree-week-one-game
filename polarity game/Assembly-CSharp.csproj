@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Low Poly Flat Sci Fi Assets\Demo\Scripts\DoubleSlidingDoorController.cs" />
+     <Compile Include="Assets\Low Poly Flat Sci Fi Assets\Demo\Scripts\FlickeringLight.cs" />
      <Compile Include="Assets\my srips\damage.cs" />
      <Compile Include="Assets\my srips\disable.cs" />
      <Compile Include="Assets\my srips\EnemyControler.cs" />
@@ -71,12 +73,16 @@
      <Compile Include="Assets\pakage stuff\Shared\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\pakage stuff\Shared\Scripts\SimpleCharacterMotor.cs" />
      <Compile Include="Assets\pakage stuff\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\YouWin.cs" />
+     <None Include="Assets\_Barking_Dog\Readme_Please.txt" />
      <None Include="Assets\pakage stuff\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\pakage stuff\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\_Creepy_Cat\_3D Scifi Kit Starter Kit\_Docs\Doc.txt" />
      <None Include="Assets\pakage stuff\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\pakage stuff\EffectExamples\Misc Effects\Shaders\Dissolve.shader" />
      <None Include="Assets\pakage stuff\EffectExamples\Misc Effects\Shaders\FireFly.shader" />
      <None Include="Assets\pakage stuff\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
+     <None Include="Assets\Low Poly Flat Sci Fi Assets\Documentation\readme.txt" />
      <None Include="Assets\pakage stuff\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\pakage stuff\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\pakage stuff\EffectExamples\Misc Effects\Shaders\Respawn.shader" />
