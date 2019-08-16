@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class PlayerControler : MonoBehaviour
 {
     //------------------
@@ -21,6 +22,15 @@ public class PlayerControler : MonoBehaviour
     public Vector3 crouchscale;
     public Vector3 normalscale;
     public bool crouchState;
+    //--------------------
+    // health
+    public float maxHealth;
+    public float health;
+    public Image healthUI;
+    public Image dmgTaken;
+    public float disaperetime;
+    public float timetilldisapere;
+    public bool PlayerHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +38,24 @@ public class PlayerControler : MonoBehaviour
         //camara
         playercam=Camera.main;
         Cursor.lockState=CursorLockMode.Locked;
+        Cursor.visible=false;
         Xclamp=0.0f;
         //---------------
         //movement
         rb=gameObject.GetComponent<Rigidbody>();
         normalscale=transform.localScale;
+        //---------------
+        //health 
+        health=maxHealth;
+        //---------------
+        //damage
+        dmgTaken.enabled=false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        HealthUIManiger();
        camraRotation();
        movement();
        if(Input.GetKeyDown(KeyCode.Space)) {
@@ -110,4 +128,23 @@ public class PlayerControler : MonoBehaviour
         playercam.transform.eulerAngles = eulerRotation;
     }
     //----------------------------
+    //health stuff
+
+    public void damage(float damage) {
+        health-=damage;
+        PlayerHit=true;
+    }
+    private void HealthUIManiger() {
+        healthUI.fillAmount=health/maxHealth;
+        if(PlayerHit==true) {
+        dmgTaken.enabled=true;
+        if(disaperetime>timetilldisapere) {
+            dmgTaken.enabled=false;
+            PlayerHit=false;
+            disaperetime=0;
+        } else {
+            disaperetime+=Time.deltaTime;
+        }
+        }
+    }
 }

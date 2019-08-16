@@ -13,10 +13,13 @@ public class EnemyControler : MonoBehaviour
 public bool playerSeen;
 public float maxWaitTime;
 public float waitTime;
+private Vector3 dire;
 //---------------------
 //UI
 public Image inZone;
 public Image alerted;
+public Image healthBar;
+public Image stuned;
 //---------------------
 //AI 
 public NavMeshAgent agent;
@@ -27,10 +30,19 @@ public float AImaxWaitTime;
     public GameObject soundmanier;
 //---------------------
 // enemy health and dying
-public int health;
+public float starthealth;
+public float health;
 public float stunTime;
 public float stunthresh;
 public float hurtThresh;
+//---------------------
+//damageing the player
+public Transform shootPos;
+public GameObject bullet;
+public float bulletSpeed;
+public float despawnTime;
+public float timebtwshots;
+public float maxtimeBtwshots;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,20 +50,30 @@ public float hurtThresh;
        sight=gameObject.GetComponent<SphereCollider>();
        inZone.enabled=false;
        agent.SetDestination(wayPoints[0].position);
+       health=starthealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthBar.fillAmount=health/starthealth;
         if(stunTime>0) {
+            stuned.enabled=true;
             agent.isStopped=true;
             stunTime-=Time.deltaTime;
         }
         if(stunTime<=0) {
         DetectionManinger();
+        stuned.enabled=false;
         if(playerSeen==true) {
             agent.isStopped=true;
             gameObject.transform.LookAt(player.transform.position,Vector3.up);
+            if(timebtwshots>=maxWaitTime) {
+            shoot();
+            timebtwshots=0;
+            } else {
+                timebtwshots+=Time.deltaTime;
+            }
         } else {
             agent.isStopped=false;
         }
@@ -75,7 +97,11 @@ public float hurtThresh;
 private void DetectionManinger() {
     if(PlayerInSight==true) {
           RaycastHit hit;
-           Vector3 dire =player.transform.position -transform.position +Vector3.up;
+          if(player.GetComponent<PlayerControler>().crouchState==false) {
+            dire =player.transform.position -transform.position +Vector3.up;
+          } else { 
+             dire =player.transform.position -transform.position;
+          }
            Ray ray= new Ray(transform.position,dire);
           if(Physics.Raycast(ray,out hit)) {
               if(hit.collider.CompareTag("Player")) {
@@ -135,13 +161,18 @@ if (AIwaitTime>=AImaxWaitTime) {
         AIwaitTime=0;
     }
 }
-public void Damage(float velocity,int damage,float forenstunTime) {
+public void Damage(float velocity,float damage,float forenstunTime) {
     if(velocity>hurtThresh) {
         health-=damage;
     } 
      if(velocity> stunthresh) {
         stunTime=forenstunTime;
     }
+}
+private void shoot() {
+  var bulletl = Instantiate (bullet, transform.position, shootPos.rotation);
+        bulletl.GetComponent<Rigidbody> ().velocity = transform.forward * bulletSpeed;
+        Destroy (bulletl, despawnTime);
 }
 public void die() {
     Destroy(gameObject);

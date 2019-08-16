@@ -6,7 +6,7 @@ public class interactableStats : MonoBehaviour
 {
   public float velocity;
   public float stunTime;
-  public int Damage;
+  public float Damage;
   public bool ismoving;
     public GameObject player;
 
