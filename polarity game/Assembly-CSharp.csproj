@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\esape.cs" />
      <Compile Include="Assets\Low Poly Flat Sci Fi Assets\Demo\Scripts\DoubleSlidingDoorController.cs" />
      <Compile Include="Assets\Low Poly Flat Sci Fi Assets\Demo\Scripts\FlickeringLight.cs" />
      <Compile Include="Assets\my srips\damage.cs" />
