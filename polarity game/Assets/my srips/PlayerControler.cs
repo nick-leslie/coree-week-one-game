@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerControler : MonoBehaviour
 {
     //------------------
@@ -72,7 +73,9 @@ public class PlayerControler : MonoBehaviour
                crouchState=false;
            }
           } 
-       
+       if(health<=0) {
+           Die();
+       }
     }
     //---------------------------------------------------
     // movement stuff
@@ -133,6 +136,9 @@ public class PlayerControler : MonoBehaviour
     public void damage(float damage) {
         health-=damage;
         PlayerHit=true;
+    }
+    public void Die() {
+        SceneManager.LoadScene(0);
     }
     private void HealthUIManiger() {
         healthUI.fillAmount=health/maxHealth;

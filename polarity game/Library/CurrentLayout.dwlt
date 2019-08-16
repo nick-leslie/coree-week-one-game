@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1440
     height: 809
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 548}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 759
-  m_MinSize: {x: 681, y: 498}
-  m_MaxSize: {x: 14002, y: 14048}
+  m_MinSize: {x: 683, y: 498}
+  m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 81
+  controlID: 28
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 82
+  controlID: 29
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 83
+  controlID: 70
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 440
     height: 759
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -331,9 +331,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: f4250000
       m_LastClickedID: 0
-      m_ExpandedIDs: c0e1ffffe4e1ffff6ce4ffff00ebffff24ebffffa8edffffb6fbffff
+      m_ExpandedIDs: b6fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -537,10 +537,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -186.25
-    m_HBaseRangeMax: 186.25
-    m_VBaseRangeMin: -104.75
-    m_VBaseRangeMax: 104.75
+    m_HBaseRangeMin: -372.5
+    m_HBaseRangeMax: 372.5
+    m_VBaseRangeMin: -209.5
+    m_VBaseRangeMax: 209.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -573,10 +573,10 @@ MonoBehaviour:
       width: 314.57266
       height: 178.60971
     m_MinimalGUI: 1
-  m_defaultScale: 2
+  m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 1
-  m_LastWindowPixelSize: {x: 1490, y: 880}
+  m_LastWindowPixelSize: {x: 745, y: 440}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -619,21 +619,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/my srips
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/my srips
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/student/Desktop/Nicks stuff for the corece(remove when
     done)/coree-week-one-game/polarity game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8e2a0000
-    m_LastClickedID: 10894
-    m_ExpandedIDs: 000000008e2a0000da2b0000322c0000b82d0000742e0000f02e0000f42e0000e82f0000da32000030330000323400007c3500006a3700008c370000be390000343a0000263b0000483b000000ca9a3b
+    scrollPos: {x: 0, y: 538}
+    m_SelectedIDs: a62e0000
+    m_LastClickedID: 11942
+    m_ExpandedIDs: 00000000902a0000dc2b0000342c0000ba2d0000762e0000f22e0000f62e0000ea2f0000dc32000032330000343400007e3500006c3700008e370000c0390000363a0000283b00004a3b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -661,7 +661,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008e2a0000da2b0000322c0000b82d0000742e0000f02e0000f42e0000e82f0000da32000030330000323400007c3500006a3700008c370000be390000343a0000263b0000483b0000
+    m_ExpandedIDs: 00000000902a0000dc2b0000342c0000ba2d0000762e0000f22e0000f62e0000ea2f0000dc32000032330000343400007e3500006c3700008e370000c0390000363a0000283b00004a3b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -713,7 +713,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 122}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 180
 --- !u!114 &18
