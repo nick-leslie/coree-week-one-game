@@ -74,6 +74,7 @@
      <Compile Include="Assets\pakage stuff\Shared\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\pakage stuff\Shared\Scripts\SimpleCharacterMotor.cs" />
      <Compile Include="Assets\pakage stuff\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\reload.cs" />
      <Compile Include="Assets\YouWin.cs" />
      <None Include="Assets\_Barking_Dog\Readme_Please.txt" />
      <None Include="Assets\pakage stuff\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
